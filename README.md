@@ -6,5 +6,5 @@
 
 npm install && npm start
 
-##项目维护人员
+## 项目维护人员
 MrSun23、xcFreedom
