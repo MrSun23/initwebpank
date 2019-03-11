@@ -35,3 +35,10 @@
      1. server中增加webpack-hot-middleware的使用
      2. 在需要开启热替换的文件尾部添加```module.hot.accept()```，事实上我们为整个项目可以热替换，我们直接在入口文件中增加
      3. 更改webacpk.config.js中的```entry```，我们需要增加部分```webpack-hot-middleware```的配置
+
+### learn/4 增加vue
+
+现在我们增加了vue和vue-router，element-ui和axios，为了处理.vue文件，我们更改了一下配置
+  1. 增加了vue-loader和vue-template-compiler来处理vue文件
+  2. plugins中添加了vue-loader的plugin
+   
