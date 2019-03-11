@@ -42,3 +42,9 @@
   1. 增加了vue-loader和vue-template-compiler来处理vue文件
   2. plugins中添加了vue-loader的plugin
    
+### learn/5 路径
+
+现在我们发现不管是img中的src需要```../../asstes/**```的写法，router中引入home文件也需要```../page/```的写法，既麻烦又容易错，所以我们配置了路径别名，来解决这个问题
+  1. webpack.config.js中新增加resolve.alias，配置```~```指向```src```目录
+  2. 为了解决template和style中的url问题，我们单独配置了```assets```指向```src/assets```，更方便的书写图片src
+  3. 为了使用scss语法，新增加sass-loader

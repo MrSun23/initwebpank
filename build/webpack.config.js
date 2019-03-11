@@ -31,6 +31,14 @@ module.exports = {
           'css-loader'
         ]
       },
+      { // 普通的.scss文件和vue文件中的`<style lang="scss">`都应用它
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      },
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|ect)$/,
         use: [
@@ -44,6 +52,12 @@ module.exports = {
         ]
       }
     ]
+  },
+  resolve: {
+    alias: {
+      '~': sourcePath,
+      'assets': path.join(sourcePath, '/assets')
+    }
   },
   plugins: [
     new CleanWebpackPlugin(),
