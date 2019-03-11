@@ -6,6 +6,7 @@ function component() {
   img.src = require('./assets/avatar.jpeg');
   ele.append(img);
   document.body.appendChild(ele);
+  console.log('success 2333');
 }
 
 
