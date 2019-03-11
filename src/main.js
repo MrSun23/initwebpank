@@ -1,20 +1,16 @@
-import './style/index.css';
+import Vue from 'vue';
+import App from './App.vue';
+import ElementUI from 'element-ui';
+import router from './router';
 
-function component() {
-  document.body.innerHTML = '';
-  const ele = document.createElement('div');
-  const img = document.createElement('img');
-  const span = document.createElement('span');
-  img.src = require('./assets/avatar.jpeg');
-  span.innerText = 'Hello webpack';
-  ele.append(img);
-  ele.appendChild(span);
-  document.body.appendChild(ele);
-  console.log('success');
-}
+Vue.use(ElementUI);
+
+window.VM = new Vue({
+  el: '#app',
+  router,
+  render: h => h(App),
+});
 
 if (module.hot) {
   module.hot.accept();
 }
-
-component();

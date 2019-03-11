@@ -2,6 +2,7 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const rootPath = path.join(__dirname, '../');
 const sourcePath = path.join(rootPath, 'src');
@@ -19,6 +20,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        use: 'vue-loader'
+      },
       {
         test: /\.css$/,
         use: [
@@ -47,5 +52,6 @@ module.exports = {
     }),
     new webpack.NamedChunksPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new VueLoaderPlugin(),
   ]
 };
