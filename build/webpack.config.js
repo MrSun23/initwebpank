@@ -1,6 +1,7 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 const rootPath = path.join(__dirname, '../');
 const sourcePath = path.join(rootPath, 'src');
@@ -8,7 +9,9 @@ const outputPath = path.join(rootPath, 'dist');
 
 module.exports = {
   mode: 'development',
-  entry: './src/main.js',
+  entry: {
+    bundle: ['./src/main.js', 'webpack-hot-middleware/client?timeout=200&overlay=true']
+  },
   output: {
     filename: '[name].[hash:8].js',
     path: outputPath,
@@ -42,5 +45,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(sourcePath, '/index.html')
     }),
+    new webpack.NamedChunksPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ]
 };
