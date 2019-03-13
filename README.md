@@ -48,3 +48,7 @@
   1. webpack.config.js中新增加resolve.alias，配置```~```指向```src```目录
   2. 为了解决template和style中的url问题，我们单独配置了```assets```指向```src/assets```，更方便的书写图片src
   3. 为了使用scss语法，新增加sass-loader
+
+### learn/6 多环境
+
+现在我们可以很好的进行开发了，但是我们还没有生产环境构建的配置。
