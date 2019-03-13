@@ -51,4 +51,12 @@
 
 ### learn/6 多环境
 
-现在我们可以很好的进行开发了，但是我们还没有生产环境构建的配置。
+现在我们可以很好的进行开发了，但是我们还没有生产环境构建的配置。所以我们分离了webpack配置
+  1. 新增```webpack.base.config.js```，将原来的配置大部分放入其中
+  2. 调整```webpack.config.js```，配置NODE_ENV
+  3. 新增```webpack.prod.config.js```，设置mode为```production```，设置NODE_ENV
+  4. ```package.json```中增加```build```命令
+
+尝试执行build命令，发现报错了，这是因为我们使用了较高版本的语法，uglifyjs无法识别，所以我们需要添加babel来转换代码。
+
+安装```babel-loader```、```@babel/core```、```@babel/preset-env```，现在我们可以正常打包了。
