@@ -3,10 +3,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 
 const rootPath = path.join(__dirname, '../');
 const sourcePath = path.join(rootPath, 'src');
 const outputPath = path.join(rootPath, 'dist');
+
+const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: {
@@ -35,14 +38,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          isProd ? MiniCSSExtractPlugin.loader : 'style-loader',
           'css-loader'
         ]
       },
       { // 普通的.scss文件和vue文件中的`<style lang="scss">`都应用它
         test: /\.scss$/,
         use: [
-          'style-loader',
+          isProd ? MiniCSSExtractPlugin.loader : 'style-loader',
           'css-loader',
           'sass-loader'
         ]

@@ -60,3 +60,10 @@
 尝试执行build命令，发现报错了，这是因为我们使用了较高版本的语法，uglifyjs无法识别，所以我们需要添加babel来转换代码。
 
 安装```babel-loader```、```@babel/core```、```@babel/preset-env```，现在我们可以正常打包了。
+
+### learn/7 CSS文件的提取和压缩
+
+当项目的CSS文件很大的时候，style-loader就显得有些捉襟见肘了，所有的css都通过style-loader转换，添加到head中，这无疑是影响效率的，因为打包的代码不仅仅包含JS了，还包含CSS了，所以我们希望在打包的时候提取出CSS作为单独的文件
+  1. 在```webpack.prod.config.js```中，使用```MiniCssExtractPlugin.loader```代替```style-loader```，
+  2. plugins中增加```MiniCssExtractPlugin```
+  3. 增加```OptimizeCSSAssetsPlugin```压缩Css文件
