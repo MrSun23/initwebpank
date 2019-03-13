@@ -5,9 +5,6 @@ const baseConfig = require('./webpack.base.config');
 
 module.exports = merge(baseConfig, {
   mode: 'production',
-  output: {
-    publicPath: '/'
-  },
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
