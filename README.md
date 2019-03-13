@@ -67,3 +67,5 @@
   1. 在```webpack.prod.config.js```中，使用```MiniCssExtractPlugin.loader```代替```style-loader```，
   2. plugins中增加```MiniCssExtractPlugin```
   3. 增加```OptimizeCSSAssetsPlugin```压缩Css文件
+
+### learn/8 splitChunks
