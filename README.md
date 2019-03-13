@@ -69,3 +69,5 @@
   3. 增加```OptimizeCSSAssetsPlugin```压缩Css文件
 
 ### learn/8 splitChunks
+
+### learn/9 解读webpack.optimization配置
