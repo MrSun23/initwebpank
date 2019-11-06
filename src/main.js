@@ -1,6 +1,6 @@
-function component() {
-  const ele = document.createElement('div');
-  ele.innerHTML = 'Hello Webpack';
-  document.appendChild(ele);
-}
+import React from 'react';
+import ReactDOM from 'react-dom';
 
+import { App } from './app.jsx';
+
+ReactDOM.render(<App />, document.getElementById('root'));

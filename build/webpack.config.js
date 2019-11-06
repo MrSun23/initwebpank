@@ -13,9 +13,20 @@ module.exports = {
     filename: '[name].[hash:8].js',
     path: outputPath,
   },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        include: [sourcePath],
+        use: 'babel-loader'
+      },
+    ],
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
+      title: '测试webpack & react',
       template: path.join(sourcePath, '/index.html')
     }),
   ]

@@ -18,9 +18,19 @@
   },
   "homepage": "https://github.com/MrSun23/initwebpank#readme",
   "devDependencies": {
+    "@babel/core": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2"
   }
 }
