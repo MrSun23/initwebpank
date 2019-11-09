@@ -13,6 +13,11 @@ module.exports = {
     filename: '[name].[hash:8].js',
     path: outputPath,
   },
+  resolve: {
+    alias: {
+      '~': sourcePath,
+    },
+  },
   module: {
     rules: [
       {
